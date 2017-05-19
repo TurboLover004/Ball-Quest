@@ -1,2 +1,2 @@
-# Ball-Quest
+# BallQuest
 A 2D Physics game
