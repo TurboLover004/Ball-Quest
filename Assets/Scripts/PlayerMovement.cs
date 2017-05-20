@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 movement = new Vector3(ray.direction.x * 10, 0.0f, ray.direction.z * 10);
+			
+			float movementLength = Mathf.Sqrt(Mathf.Pow(movement.x, 2) + Mathf.Pow(movement.z, 2));
+			movement = speed * (movement/movementLength);
 
             playerBody.AddForce(movement * speed);
         }
